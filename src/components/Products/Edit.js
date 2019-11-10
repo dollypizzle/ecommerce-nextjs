@@ -2,8 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from '../../axios-orders';
 import { useRouter } from 'next/router';
 import Router from 'next/router';
-import Navigation from '../Navigation/Navigation';
-import Footer from '../Navigation/Footer';
+
 import {
   MDBContainer,
   MDBRow,
@@ -65,7 +64,6 @@ const Edit = props => {
 
   return (
     <>
-      <Navigation />
       <MDBContainer className="px-5">
         <MDBRow className="d-flex justify-content-center">
           <MDBCol className="card mt-5" xl="6">
@@ -138,7 +136,6 @@ const Edit = props => {
           </MDBCol>
         </MDBRow>
       </MDBContainer>
-      <Footer />
     </>
   );
 };

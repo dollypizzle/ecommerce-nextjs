@@ -10,6 +10,7 @@ import Head from 'next/head';
 // import jwtDecode from 'jwt-decode';
 // import { setCurrentUser } from '../src/store/actions/authActions';
 import withRedux from 'next-redux-wrapper';
+import Layout from '../src/components/Layouts/Layout';
 
 const stored = () =>
   createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk)));
@@ -38,9 +39,32 @@ class MyApp extends App {
         </Head>
         <Container>
           <Provider store={store}>
-            <Component {...pageProps} />
+            <Layout>
+              <Component {...pageProps} />
+            </Layout>
           </Provider>
         </Container>
+
+        <style global jsx>{`
+          html {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            min-height: 100%;
+          }
+          body {
+            flex: 1;
+            margin: 0 0 100px;
+          }
+          #MyFoot {
+            background-color: black;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            left: 0;
+            overflow: hidden;
+          }
+        `}</style>
       </>
     );
   }

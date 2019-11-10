@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
 import Link from 'next/link';
-import Navigation from '../Navigation/Navigation';
-import Footer from '../Navigation/Footer';
 
 import {
   MDBContainer,
@@ -77,7 +75,6 @@ const CheckOut = props => {
 
   return cart.addedItems.length > 0 ? (
     <>
-      <Navigation />
       <MDBContainer>
         <MDBRow>
           <MDBCol md="6" className="mt-4">
@@ -170,15 +167,12 @@ const CheckOut = props => {
           </MDBCol>
         </MDBRow>
       </MDBContainer>
-      <Footer />
     </>
   ) : (
     <>
-      <Navigation />
       <p className="text-center my-5">
         <strong>No products in the cart</strong>
       </p>
-      <Footer />
     </>
   );
 };

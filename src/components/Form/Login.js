@@ -3,8 +3,6 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { login } from '../../store/actions/authActions';
 import Router from 'next/router';
-import Navbar from '../Navigation/Navigation';
-import Footer from '../Navigation/Footer';
 
 import {
   MDBContainer,
@@ -43,7 +41,6 @@ const Login = props => {
 
   return (
     <>
-      <Navbar />
       <MDBContainer
         className="px-10"
         style={{ marginTop: '58px', marginBottom: '55px' }}
@@ -82,7 +79,6 @@ const Login = props => {
           </MDBCol>
         </MDBRow>
       </MDBContainer>
-      <Footer />
     </>
   );
 };

@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
 import Link from 'next/link';
-import Navigation from '../Navigation/Navigation';
-import Footer from '../Navigation/Footer';
 
 import {
   removeItem,
@@ -132,7 +130,6 @@ const Cart = props => {
 
   return cart.addedItems.length > 0 ? (
     <>
-      <Navigation />
       <MDBRow className="my-2 ml-3 mr-1" center>
         <MDBCard className="w-100">
           <MDBCardBody>
@@ -165,18 +162,15 @@ const Cart = props => {
           </MDBBtn>
         </div>
       </MDBRow>
-      <Footer />
     </>
   ) : (
     <>
-      <Navigation />
       <h3
         className="text-center"
         style={{ marginTop: '212px', marginBottom: '211px' }}
       >
         <strong>Your cart is empty!!!</strong>
       </h3>
-      <Footer />
     </>
   );
 };
