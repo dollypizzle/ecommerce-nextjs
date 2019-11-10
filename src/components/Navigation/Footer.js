@@ -10,7 +10,7 @@ const Foot = styled(MDBFooter)`
 
 const Footer = () => {
   return (
-    <Foot className="font-small pt-4 mt-4" id="MyFoot">
+    <Foot style={{ marginTop: '50px' }} className="font-small" id="MyFoot">
       <div className="footer-copyright text-center py-3">
         <MDBContainer fluid>
           &copy; {new Date().getFullYear()} Copyright:{' '}
