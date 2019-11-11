@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import cookie from 'js-cookie';
+import Router from 'next/router';
 
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import 'bootstrap-css-only/css/bootstrap.min.css';
@@ -47,7 +48,7 @@ const Navigation = props => {
         </Link>
       </MDBNavItem>
       <MDBNavItem>
-        <Link href="">
+        <Link>
           <a onClick={logout} className="nav-link">
             Logout
           </a>
@@ -100,6 +101,5 @@ const Navigation = props => {
     </MDBNavbar>
   );
 };
-
 
 export default Navigation;
