@@ -56,7 +56,8 @@ const Edit = ({ id }) => {
         Authorization: `Bearer ${token}`,
       },
     });
-    Router.push('/products');
+    // Router.push('/products');
+    Router.replace(`/product/${id}`);
   };
 
   return (

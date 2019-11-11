@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
 import cookie from 'js-cookie';
 
 import '@fortawesome/fontawesome-free/css/all.min.css';
@@ -103,18 +101,5 @@ const Navigation = props => {
   );
 };
 
-Navigation.propTypes = {
-  auth: PropTypes.object.isRequired,
-  logout: PropTypes.func.isRequired,
-};
 
-function mapStateToProps(state) {
-  return {
-    auth: state.auth,
-  };
-}
-
-export default connect(
-  mapStateToProps
-  // { logout }
-)(Navigation);
+export default Navigation;

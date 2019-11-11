@@ -37,13 +37,11 @@ class MyApp extends App {
         <Head>
           <title>Dolmart</title>
         </Head>
-        <Container>
           <Provider store={store}>
             <Layout>
               <Component {...pageProps} />
             </Layout>
           </Provider>
-        </Container>
 
         <style global jsx>{`
           html {
