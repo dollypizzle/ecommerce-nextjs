@@ -16,7 +16,6 @@ import {
 const Login = props => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  //const [redirect, setRedirect] = useState(false);
 
   const handleEmailChange = event => setEmail(event.target.value);
   const handlePasswordChange = event => setPassword(event.target.value);
@@ -34,10 +33,6 @@ const Login = props => {
       console.log(error);
     }
   };
-
-  // if (redirect) {
-  //   return <Redirect to={'/products'} />;
-  // }
 
   return (
     <>

@@ -19,7 +19,6 @@ const Register = props => {
   const [email, setEmail] = useState('');
   const [phonenumber, setPhonenumber] = useState('');
   const [password, setPassword] = useState('');
-  const [redirect, setRedirect] = useState(false);
 
   const handleFirstnameChange = event => setFirstname(event.target.value);
   const handleLastnameChange = event => setLastname(event.target.value);

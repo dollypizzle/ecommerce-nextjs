@@ -4,6 +4,7 @@ import axios from '../../axios-orders';
 import Body from './Body';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import cookie from 'js-cookie';
 
 import {
   MDBJumbotron,
@@ -17,7 +18,7 @@ import {
 const Products = props => {
   const [product, setProduct] = useState(null);
 
-  const { isAuthenticated } = props.auth;
+  const user = cookie.get('user');
 
   useEffect(() => {
     const fetchData = async () => {
@@ -53,10 +54,6 @@ const Products = props => {
 
   const guestLinks = <div></div>;
 
-  // if (redirect) {
-  //   return <Redirect to={'/login'} />;
-  // }
-
   return (
     <>
       <MDBContainer className="mt-3 text-center">
@@ -65,7 +62,7 @@ const Products = props => {
             <MDBJumbotron>
               <h2 className="h1 display-3">Dolmart Phone Hub</h2>
               <hr className="my-2" />
-              {isAuthenticated ? userLinks : guestLinks}
+              {user ? userLinks : guestLinks}
             </MDBJumbotron>
           </MDBCol>
         </MDBRow>
