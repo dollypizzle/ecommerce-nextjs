@@ -4,8 +4,6 @@ import axios from '../../axios-orders';
 import Body from './Body';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import Footer from '../Navigation/Footer';
-import Navigation from '../Navigation/Navigation';
 
 import {
   MDBJumbotron,
@@ -61,7 +59,6 @@ const Products = props => {
 
   return (
     <>
-      <Navigation />
       <MDBContainer className="mt-3 text-center">
         <MDBRow>
           <MDBCol>
@@ -75,7 +72,6 @@ const Products = props => {
 
         <MDBRow>{tabRow()}</MDBRow>
       </MDBContainer>
-      <Footer />
     </>
   );
 };

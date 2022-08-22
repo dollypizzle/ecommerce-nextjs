@@ -4,8 +4,6 @@ import 'bootstrap-css-only/css/bootstrap.min.css';
 import 'mdbreact/dist/css/mdb.css';
 import axios from '../../axios-orders';
 import TableImg from './Table';
-import Navigation from '../Navigation/Navigation';
-import Footer from '../Navigation/Footer';
 
 import {
   MDBCarousel,
@@ -45,7 +43,6 @@ const Home = props => {
 
   return (
     <>
-      <Navigation />
       <MDBAnimation type="bounce" infinite>
         <img
           style={{ height: '100px', marginTop: '35px' }}
@@ -132,7 +129,6 @@ const Home = props => {
         <h3>Latest Products</h3>
         <MDBRow className="mt-3">{tabRow()}</MDBRow>
       </MDBContainer>
-      <Footer />
     </>
   );
 };

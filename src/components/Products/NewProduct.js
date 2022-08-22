@@ -3,8 +3,6 @@ import { createProduct } from '../../store/actions/productActions';
 import Router from 'next/router';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import Navigation from '../Navigation/Navigation';
-import Footer from '../Navigation/Footer';
 
 import {
   MDBContainer,
@@ -53,7 +51,6 @@ const Add = props => {
 
   return (
     <>
-      <Navigation />
       <MDBContainer className="px-5">
         <MDBRow className="d-flex justify-content-center">
           <MDBCol className="card mt-3" sm="12" md="8" lg="6">
@@ -121,7 +118,6 @@ const Add = props => {
           </MDBCol>
         </MDBRow>
       </MDBContainer>
-      <Footer />
     </>
   );
 };

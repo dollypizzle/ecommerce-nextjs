@@ -3,8 +3,6 @@ import axios from '../../axios-orders';
 import { MDBContainer } from 'mdbreact';
 import Table from './Table';
 import { useRouter } from 'next/router';
-import Navigation from '../Navigation/Navigation';
-import Footer from '../Navigation/Footer';
 
 const Show = props => {
   const [product, setProduct] = useState(null);
@@ -41,9 +39,7 @@ const Show = props => {
 
   return (
     <>
-      <Navigation />
       <MDBContainer className="mt-5 text-center">{tabRow()}</MDBContainer>
-      <Footer />
     </>
   );
 };
