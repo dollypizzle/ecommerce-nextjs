@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { logout } from '../../store/actions/authActions';
+import cookie from 'js-cookie';
 
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import 'bootstrap-css-only/css/bootstrap.min.css';
@@ -17,18 +17,19 @@ import {
 } from 'mdbreact';
 
 const Navigation = props => {
-  const logout = event => {
-    event.preventDefault();
-    props.logout();
+  const [isOpen, setIsOpen] = useState(false);
+
+  const logout = () => {
+    cookie.remove('jwtToken');
+    cookie.remove('user');
+    Router.push('/');
   };
 
-  const [isOpen, setIsOpen] = useState(false);
+  const user = cookie.get('user');
 
   const toggleCollapse = () => {
     setIsOpen(!isOpen);
   };
-
-  const { isAuthenticated } = props.auth;
 
   const userLinks = (
     <MDBNavbarNav right>
@@ -96,9 +97,7 @@ const Navigation = props => {
       </MDBNavbarBrand>
       <MDBNavbarToggler onClick={toggleCollapse} />
       <MDBCollapse id="navbarCollapse3" isOpen={isOpen} navbar>
-        <MDBNavbarNav right>
-          {isAuthenticated ? userLinks : guestLinks}
-        </MDBNavbarNav>
+        <MDBNavbarNav right>{user ? userLinks : guestLinks}</MDBNavbarNav>
       </MDBCollapse>
     </MDBNavbar>
   );
@@ -116,6 +115,6 @@ function mapStateToProps(state) {
 }
 
 export default connect(
-  mapStateToProps,
-  { logout }
+  mapStateToProps
+  // { logout }
 )(Navigation);

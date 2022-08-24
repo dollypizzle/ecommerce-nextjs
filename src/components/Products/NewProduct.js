@@ -45,10 +45,6 @@ const Add = props => {
     }
   };
 
-  // if (redirect) {
-  //   return <Redirect to={'/products'} />;
-  // }
-
   return (
     <>
       <MDBContainer className="px-5">

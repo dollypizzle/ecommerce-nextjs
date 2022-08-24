@@ -1,8 +1,9 @@
 import axios from '../../axios-orders';
+import cookie from 'js-cookie';
 
 export function createProduct(event) {
   return dispatch => {
-    const token = localStorage.getItem('jwtToken');
+    const token = cookie.get('jwtToken');
     return axios.post('/products', event, {
       headers: {
         Authorization: `Bearer ${token}`,

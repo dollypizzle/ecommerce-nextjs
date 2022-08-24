@@ -3,16 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next",
+    "dev": "nodemon -w server.js server.js",
     "build": "next build",
-    "start": "next start -p $PORT",
-    "heroku-postbuild": "npm run build"
+    "start": "node server.js"
   },
   "dependencies": {
     "@zeit/next-css": "^1.0.1",
     "axios": "^0.19.0",
     "classnames": "^2.2.5",
     "cookie-parser": "^1.4.4",
+    "express": "^4.17.1",
     "js-cookie": "^2.2.1",
     "jsonwebtoken": "^8.5.1",
     "jwt-decode": "^2.2.0",
@@ -32,6 +32,7 @@
     "redux": "^4.0.4",
     "redux-devtools-extension": "^2.13.8",
     "redux-thunk": "^2.3.0",
+    "server": "^1.0.19",
     "short-id": "^0.1.0-1",
     "styled-components": "^4.4.0"
   },
