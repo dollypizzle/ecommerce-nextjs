@@ -49,7 +49,7 @@ const Navigation = props => {
         </Link>
       </MDBNavItem>
       <MDBNavItem>
-        <Link href="/logout">
+        <Link href="">
           <a onClick={logout} className="nav-link">
             Logout
           </a>
